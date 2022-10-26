@@ -1,31 +1,82 @@
+let playerSelection = "";
+let computerSelection = "";
+startGame();
 
-/*This fonction getComputerChoice return 
-randomly rock, paper or scissors */
-function getComputerChoice(){           //Declare and named the function
-    const randomNumb = Math.random();   //Create variable randomNumb and assigned with Math.random number between 0 and 1
-    if(randomNumb >= 0.66){             //I choice to divide 1 by 3 and make 3 interval this line is 1 to 0.66  
-        return "scissors";              //Each interval match with scissor, rock or paper and this interval match with scissors and return it
+function getUserChoice(){
+    let userChoice = prompt("rock paper or scissors ?").toLocaleLowerCase();
+    return userChoice;
+}
+
+function getComputerChoice(){           
+    const randomNumb = Math.random();   
+    if(randomNumb >= 0.66){             
+        return "scissors";              
     }
-    else if (randomNumb <= 0.33){       //If randomNumb < or = to 0.33 then look line 10 
-        return "rock";                  //The function return the string rock 
+    else if (randomNumb <= 0.33){       
+        return "rock";                  
     }
-    else{                               //As the function Math.random return number between 1 and 0 the last interval is between 0.66 and 0.33 no other choice possible that is why i make just else.
-        return "paper";                 //The function return the string paper
+    else{                               
+        return "paper";                 
     }
 }
 
-const playerSelection = prompt("rock paper or scissors ?").toLocaleLowerCase(); //Declare and assign the result of prompt function (witch is pop for user can enter value)to playerSelection
+function startGame(){
+    const wantPlay = confirm("Did you want play rock paper scissors")
+    if (wantPlay == true){
+        alert("The rules are simple.\nRock beat scissors, scissors beat paper, paper beat rock.\nYou play 5 rounds.\nIf its tie we remake lets go !!")
+        playerSelection = getUserChoice(); 
+        computerSelection = getComputerChoice(); 
+        game();
+    }
+    else{
+        document.location.href="https://www.youtube.com/watch?v=dQw4w9WgXcQ";
+    }
+} 
 
-const computerSelection = getComputerChoice();                                  //Declare and assign the result of getComputerChoice function to computerSelection
+function game(){
+    let userPoint = 0;
+    let computerPoint = 0;
+    while(userPoint < 5 && computerPoint < 5){
+        let winOr = doPoint(playerSelection, computerSelection)
+        if(winOr === 2){
+            userPoint++;
+            if(userPoint === 5){
+                alert("You win the Game and have 5 points")
+                startGame()
+            }
+            alert("You win "+playerSelection+" beat "+computerSelection+".\nYou have "+userPoint+" points and the computer have "+computerPoint+" points.")
+            playerSelection = getUserChoice();
+            computerSelection = getComputerChoice();
+        }
+        else if(winOr === 3){
+            computerPoint++;
+            if(computerPoint === 5){
+                alert("You lose the game computer have 5 points")
+                startGame()
+            }
+            alert("You loose "+computerSelection+" beat "+playerSelection+".\nYou have "+userPoint+" points and the computer have "+computerPoint+" points.")
+            playerSelection = getUserChoice();
+            computerSelection = getComputerChoice();
+        }
+        else{
+            alert("It's tie !!\nYou have "+userPoint+" points and the computer have "+computerPoint+" points.")
+            playerSelection = getUserChoice();
+            computerSelection = getComputerChoice();
+        }
+    }
+    
+}
 
-function playRound(playerSelection, computerSelection) {                        //Create playRound function and have to parameter that is the precedent variable
-    if(playerSelection === computerSelection){                                  //If playerSelection its strictly equal (value and type) then
-        return "It's tie !"                                                     //Function return it's tie
+function doPoint(playerSelection, computerSelection){                       
+    if(playerSelection === computerSelection){
+        return 1;                                                    
     }
     else if((playerSelection === "rock" && computerSelection === "scissors")||(playerSelection === "paper" && computerSelection === "rock")||(playerSelection === "scissors" && computerSelection ==="paper")){
-        return "You win "+playerSelection+" beat "+computerSelection+".";       //If the player select rock and the computer scissors or things like that, you know the game. && = and , and || = or, then i hope you understand  
-    }                                                                           //Function return "You win rock beat scissors."
+        return 2;         
+    }                                                                           
     else{
-        return "You loose "+computerSelection+" beat "+playerSelection+".";     //And then if other if not match its mean the player loose 
+        return 3;      
     }
   }
+
+    

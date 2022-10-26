@@ -3,8 +3,14 @@ let computerSelection = "";
 startGame();
 
 function getUserChoice(){
-    let userChoice = prompt("rock paper or scissors ?").toLocaleLowerCase();
-    return userChoice;
+    let userChoice = "Empty"
+    userChoice = prompt("rock paper or scissors ?")
+    if(userChoice != null){
+       return userChoice.toLocaleLowerCase(); 
+    }
+    else{
+        document.location.href="https://www.youtube.com/watch?v=dQw4w9WgXcQ";
+    }
 }
 
 function getComputerChoice(){           
@@ -77,6 +83,4 @@ function doPoint(playerSelection, computerSelection){
     else{
         return 3;      
     }
-  }
-
-    
+}

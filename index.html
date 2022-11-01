@@ -5,9 +5,32 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rock paper scissors</title>
+    <script src="rps.js" defer> </script>
+    <link rel="stylesheet" href="stylesheet.css">
+
 </head>
 <body>
-    <p>Ouvre la console le jeux ce passe la bas appuie donc sur f12</p>
-    <script type="text/javascript" src="rps.js"> </script>
+    <h1>Pierre Feuille Ciseaux</h1>
+    <div class="choix">
+        <img class=left src="/img/pouceBas.png" alt="">
+        <img class=right src="/img/pouceUp.png" alt="">
+    </div>
+    <div id="container">
+        <div id="photoUser">
+            <img id="rock" src="/img/pierre.png"  alt="pierre">
+            <img id="paper" src="/img/feuille.png" alt="feuille">
+            <img id="scissors" src="/img/ciseaux.png" alt="ciseaux">  
+        </div>
+        <div class="beat"></div>
+        <div id="photoIa">
+            <img src="/img/pierre.png"  alt="pierre">
+            <img src="/img/feuille.png" alt="feuille">
+            <img src="/img/ciseaux.png" alt="ciseaux">  
+        </div>
+        
+    </div>
+    <div class="score">
+        
+    </div>
 </body>
 </html>

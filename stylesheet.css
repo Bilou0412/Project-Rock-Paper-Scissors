@@ -47,18 +47,6 @@ div.choix img{
 
     
 
-div.choix .imgCenter{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border: solid;
-    border-color: aliceblue;
-    flex-direction: row;
-    justify-content: space-between;
-    margin: 30px;
-    
-}
-
 
 
 #container img{

@@ -129,15 +129,15 @@ function displayWinner(number){
     
     if(number == 1){
     pouce.innerHTML = '<img class=left src="img/pouceUp.png" alt=""></img><img class=right src="img/pouceBas.png" alt=""></img>';
-    beat.innerHTML = "<p>"+playerSelection+" VS "+computerSelection+"</p>"
+    beat.innerHTML = "<p>"+playerSelection+" <p> VS </p> "+computerSelection+"</p>"
     }
     else if(number == 2){
         pouce.innerHTML = '<img class=left src="img/pouceBas.png" alt=""></img><img class=right src="img/pouceUp.png" alt=""></img>'; 
-        beat.innerHTML = "<p>"+playerSelection+" VS "+computerSelection+"</p>" 
+        beat.innerHTML = "<p>"+playerSelection+" <p> VS </p> "+computerSelection+"</p>" 
     }
     else{
         pouce.innerHTML = '<img class=left src="img/egaliter.png" alt=""></img><img class=right src="img/egaliter.png" alt=""></img>'; 
-        beat.innerHTML = "<p>"+playerSelection+" VS "+computerSelection+"</p>"
+        beat.innerHTML = "<p>"+playerSelection+"<p> VS </p>"+computerSelection+"</p>"
     }
 
 }

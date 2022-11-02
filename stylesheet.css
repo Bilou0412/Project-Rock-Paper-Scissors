@@ -4,6 +4,7 @@ body{
     margin: 0;
     min-height: 100vh;
     background-color: rgb(14, 14, 14);
+    
 }
 h1{
     display: flex;
@@ -25,22 +26,37 @@ display: flex;
 justify-content: space-between;
 align-items: center;
 flex-direction: row;
+flex-wrap: wrap;
+
 
 }
 div.choix img{
     transition: all 1s;
     display: flex;
-    width: 200px;
-    height: 200px;
+    width: 150px;
+    height: 150px;
     margin: 30px;
+    justify-content: center;
+    align-items: center;
+    border: solid;
+    border-color: aliceblue;
+    flex-direction: row;
+    justify-content: space-between;
+    border-radius: 1rem;
 }
-div.choix .left{
+
+    
+
+div.choix .imgCenter{
     display: flex;
-    margin-left: 100px;
-}
-div.choix .right{
-    display: flex;
-    margin-right: 100px;
+    justify-content: center;
+    align-items: center;
+    border: solid;
+    border-color: aliceblue;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 30px;
+    
 }
 
 
@@ -54,6 +70,7 @@ div.choix .right{
     border-color: rgb(1, 1, 43);
     margin: 1rem;
     transition: all 0.07s;
+    
 }
 .animation{
     transform: scale(1.5);
@@ -66,10 +83,14 @@ div#photoIa{
     justify-content: center;
     align-items: center;
     margin-right: 15px;
+    flex-wrap: wrap;
 }
 div#photoUser{
     display: flex;
     margin-left: 15px;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
     
 }
 
@@ -78,7 +99,7 @@ div#container{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    margin: 15px;
+    align-items: center;   
 }
 
 
@@ -99,7 +120,7 @@ div.scoreIA{
     text-align: center;
     font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     font-weight: 1000;
-    padding: 100px;
+    padding: 30px;
     font-size: x-large;
     width: 130px;
     margin: 30px;
@@ -114,13 +135,14 @@ div.scoreIA{
     width:300px;
     border: solid;
     background-color: rgb(29, 28, 28);
-    border-color: black;
+    border-color: rgb(77, 77, 77);
     border-radius: 1rem;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     justify-content: center;
     align-items: center;
     font-weight: 900;
     font-size: x-large;
+    height: auto;
 }
 
 
